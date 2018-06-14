@@ -93,9 +93,9 @@
 <meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/3.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/5.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/4.png">
-<meta property="og:updated_time" content="2018-06-14T04:15:43.589Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/5.png">
+<meta property="og:updated_time" content="2018-06-14T04:31:08.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Usage">
 <meta name="twitter:description" content="Git 与 SVN 都是项目版本控制和团队协作的工具，Git 是分布式的版本控制，而SVN是集中式的版本控制，可以说 Git 具有更好的去中心化的能力，也是更符合团队合性质的一个工具，也符合社区和开源的思想。 Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历史和 rollback ），快速的热操作（pull 、push） ， 修正提交（修改提交的记录），本地分支（Local Bra">
@@ -372,9 +372,9 @@
 <p>要注意，pull = fetch + merge，你拉取代码的时候选择的是pull还是fetch，还是使用rebase，这个要根据你的个人习惯，最主要的是要根据你团队的Git工作流来操作。</p>
 </li>
 <li><p>完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。</p>
-<p><img src="/2018/06/13/Git-Usage/5.png" alt=""></p>
-<p>在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）</p>
 <p><img src="/2018/06/13/Git-Usage/4.png" alt=""></p>
+<p>在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）</p>
+<p><img src="/2018/06/13/Git-Usage/5.png" alt=""></p>
 </li>
 <li><p>Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的”1 ↑”就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到”1↓”，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。</p>
 <p>（以上部分是主要流程，以下部分是关于 branch 的部分知识）</p>
@@ -781,5 +781,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>
