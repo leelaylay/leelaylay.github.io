@@ -327,22 +327,22 @@
 <h2><span id="界面操作">界面操作</span></h2><h3><span id="命令行使用">命令行使用</span></h3><p>命令行的使用可以帮助我们更好地理解 Git 相关概念。</p>
 <p><strong>Clone</strong></p>
 <p>Clone 是指将一个他人的远程仓库复制到自己的本地仓库中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 使用 https，而 ssh 一般需要专门的 ssh key。</span><br><span class="line">git clone https://github.com/leelaylay/leelaylay.github.io.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用 https，而 ssh 一般需要专门的 ssh key。</span></span><br><span class="line">git clone https://github.com/leelaylay/leelaylay.github.io.git</span><br></pre></td></tr></table></figure>
 <p><strong>Init</strong></p>
 <p>Init 独自创建本地的仓库。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 将当前文件下下作为本地仓库位置，同时建立".git"文件夹差量保存项目日志。</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将当前文件下下作为本地仓库位置，同时建立<span class="string">".git"</span>文件夹差量保存项目日志。</span></span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
 <p><strong>Add</strong></p>
 <p>add 就是将本地 change 添加到项目中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> XXXX 代表某个文件或文件夹，另外".gitignore"文件能指定git项目忽略匹配的文件</span><br><span class="line">git add XXXX</span><br><span class="line"><span class="meta">#</span> rm 代表删除某个文件</span><br><span class="line">git rm XXXX</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> XXXX 代表某个文件或文件夹，另外<span class="string">".gitignore"</span>文件能指定git项目忽略匹配的文件</span></span><br><span class="line">git add XXXX</span><br><span class="line"><span class="meta">#</span><span class="bash"> rm 代表删除某个文件</span></span><br><span class="line">git rm XXXX</span><br></pre></td></tr></table></figure>
 <p><strong>Commit</strong></p>
 <p>commit 就是提交保存一次 change 到提交记录中，区别于 add 的在于 add 的时候没有 commit 到本地仓库提交记录，一般都是先 add 再 commit。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure>
 <p><strong>Pull/Fetch</strong></p>
 <p>Pull/Fetch 操作可以使本地仓库更新到远程仓库的版本，可以理解 Fetch 只是将远程的所有提交记录下载到本地，没有合并，而 Pull 则需要合并。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> fetch 使本地仓库更新到远程仓库的版本时，代码没有合并（merge）。&lt;remote&gt;代表远程仓库。</span><br><span class="line">git fetch &lt;remote&gt;</span><br><span class="line"><span class="meta">#</span> pull 使本地仓库更新到远程仓库的版本时，代码需要合并（merge）。&lt;remote&gt;代表远程仓库，&lt;branch&gt;代表远程分支，可以均不指定代表默认远程的某个分支。</span><br><span class="line">git pull &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> fetch 使本地仓库更新到远程仓库的版本时，代码没有合并（merge）。&lt;remote&gt;代表远程仓库。</span></span><br><span class="line">git fetch &lt;remote&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> pull 使本地仓库更新到远程仓库的版本时，代码需要合并（merge）。&lt;remote&gt;代表远程仓库，&lt;branch&gt;代表远程分支，可以均不指定代表默认远程的某个分支。</span></span><br><span class="line">git pull &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>Push</strong></p>
 <p>与 pull 相对的便是 push，指的是将本地仓库的更新推送到远程仓库的某个分支。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> push 使本地仓库的更新推送到远程仓库的某个分支时。&lt;remote&gt;代表远程仓库，&lt;branch&gt;代表远程分支，可以均不指定代表默认远程的某个分支。</span><br><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> push 使本地仓库的更新推送到远程仓库的某个分支时。&lt;remote&gt;代表远程仓库，&lt;branch&gt;代表远程分支，可以均不指定代表默认远程的某个分支。</span></span><br><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
 <p>git 相关指令如下：</p>
 <p><img src="/2018/06/13/Git-Usage/git.png" alt="Git-Shell-Usage"></p>
 <h3><span id="图形化界面使用">图形化界面使用</span></h3><p>图形化界面使用方便，实用友好，本文以 SourceTree 为例介绍。</p>
@@ -781,5 +781,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
 </html>
