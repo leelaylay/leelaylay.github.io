@@ -125,7 +125,7 @@ git push <remote> <branch>
 
 git 相关指令如下：
 
-![Git-Shell-Usage](Git-Usage/git.png)
+![Git-Shell-Usage](git.png)
 
 ### 图形化界面使用
 
@@ -143,7 +143,7 @@ git 相关指令如下：
   
   下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。
 
-     ![](Git-Usage/1.png)
+     ![](1.png)
 
    
 
@@ -153,11 +153,11 @@ git 相关指令如下：
 
 6. 此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。
 
-   ![](/Users/lee/Project/Blog/leelaylay.github.io/source/_posts/Git-Usage/2.png)
+   ![](2.png)
 
    完成commit之后，提交历史就会变成如下所示。”1↑“表示本地提交比远程提交领先一次commit。
 
-   ![](Git-Usage/3.png)
+   ![](3.png)
 
 7. 本地完成commit之后，就需要向远程仓库提交(Push)代码了。个人建议，在Push之前，先进行Pull。
 
@@ -165,11 +165,11 @@ git 相关指令如下：
 
 8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。
 
-   ![](/Users/lee/Project/Blog/leelaylay.github.io/source/_posts/Git-Usage/5.png)
+   ![](5.png)
 
    在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）
 
-   ![](Git-Usage/4.png)
+   ![](4.png)
 
 9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的"1 ↑"就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到"1↓"，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
 

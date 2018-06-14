@@ -42,7 +42,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -91,3 +91,14 @@ deploy:
   type: git
   repo: https://github.com/leelaylay/leelaylay.github.io.git
   branch: master
+
+# Social relevant
+social:
+  GitHub: https://github.com/leelaylay
+  Email: mailto:contact@leelaylay.com
+
+social_icons:
+  enable: true
+  GitHub: github
+  Email: envelope
+  
