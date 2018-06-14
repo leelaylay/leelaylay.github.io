@@ -26,21 +26,21 @@ Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历�
 
 
 
-注册 Github 账号流程如下，进入 https://github.com，选择“Sign up for Github”，输入新建的用户名（Username）和邮箱地址（Email）、密码（Password），点击创建即可，下一步。一般选择计划为“Free”（Github Education可以另外），不要勾选了“Help me set up an organization next”，最后点击“Finish Sign Up”，账号建立完毕。
+注册 Github 账号流程如下，进入 <https://github.com>，选择“Sign up for Github”，输入新建的用户名（Username）和邮箱地址（Email）、密码（Password），点击创建即可，下一步。一般选择计划为“Free”（Github Education可以另外），不要勾选了“Help me set up an organization next”，最后点击“Finish Sign Up”，账号建立完毕。
 
 
 
-注册 Bitbucket 账号流程如下，https://bitbucket.org/account/signup/，输入邮箱地址（Email），点击“Continue”，再次确认邮箱地址（Email）、密码（Password），点击“Continue”，最后在邮箱中点击“                  Verify my email address” ，再输入自己的用户（Username）即可完成 Bitbucket账号的注册。（ Bitbucket 似乎目前支持Google Account和 Github账号的关联，感觉也挺方便的）（一般需要翻墙）
+注册 Bitbucket 账号流程如下，<https://bitbucket.org/account/signup/>，输入邮箱地址（Email），点击“Continue”，再次确认邮箱地址（Email）、密码（Password），点击“Continue”，最后在邮箱中点击“                  Verify my email address” ，再输入自己的用户（Username）即可完成 Bitbucket账号的注册。（ Bitbucket 似乎目前支持Google Account和 Github账号的关联，感觉也挺方便的）（一般需要翻墙）
 
 
 
 ### Github Desktop
 
-去https://desktop.github.com/网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
+去 <https://desktop.github.com/> 网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
 
 ### SourceTree
 
-去https://www.sourcetreeapp.com/网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
+去 <https://www.sourcetreeapp.com/> 网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
 
 ## Git 相关概念
 
@@ -62,24 +62,74 @@ Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历�
 
 命令行的使用可以帮助我们更好地理解 Git 相关概念。
 
-**Clone（克隆）**
+**Clone**
+
+Clone 是指将一个他人的远程仓库复制到自己的本地仓库中。
 
 ```shell
-# 使用 https
+# 使用 https，而 ssh 一般需要专门的 ssh key。
 git clone https://github.com/leelaylay/leelaylay.github.io.git
+```
+
+**Init**
+
+Init 独自创建本地的仓库。
+
+```shell
+# 将当前文件下下作为本地仓库位置，同时建立".git"文件夹差量保存项目日志。
+git init
+```
+
+**Add**
+
+add 就是将本地 change 添加到项目中。
+
+```shell
+# XXXX 代表某个文件或文件夹，另外".gitignore"文件能指定git项目忽略匹配的文件
+git add XXXX
+# rm 代表删除某个文件
+git rm XXXX
+```
+
+**Commit**
+
+commit 就是提交保存一次 change 到提交记录中，区别于 add 的在于 add 的时候没有 commit 到本地仓库提交记录，一般都是先 add 再 commit。
+
+```shell
+git commit
+```
+
+**Pull/Fetch**
+
+Pull/Fetch 操作可以使本地仓库更新到远程仓库的版本，可以理解 Fetch 只是将远程的所有提交记录下载到本地，没有合并，而 Pull 则需要合并。
+
+```shell
+# fetch 使本地仓库更新到远程仓库的版本时，代码没有合并（merge）。<remote>代表远程仓库。
+git fetch <remote>
+# pull 使本地仓库更新到远程仓库的版本时，代码需要合并（merge）。<remote>代表远程仓库，<branch>代表远程分支，可以均不指定代表默认远程的某个分支。
+git pull <remote> <branch>
+```
+
+**Push**
+
+与 pull 相对的便是 push，指的是将本地仓库的更新推送到远程仓库的某个分支。
+
+```shell
+# push 使本地仓库的更新推送到远程仓库的某个分支时。<remote>代表远程仓库，<branch>代表远程分支，可以均不指定代表默认远程的某个分支。
+git push <remote> <branch>
 ```
 
 
 
 
 
-
+git 相关指令如下：
 
 ![Git-Shell-Usage](Git-Usage/git.png)
 
 ### 图形化界面使用
 
-图形化使用方便，实用友好。
+图形化界面使用方便，实用友好，本文以 SourceTree 为例介绍。
 
 1. 在这里，我们把远程仓库搭建在Github（Bitbucket类似）上面，现在我的远程仓库为： https://github.com/leelaylay/leelaylay.github.io.git
 
@@ -87,13 +137,11 @@ git clone https://github.com/leelaylay/leelaylay.github.io.git
 
 3. clone项目完成后，SourceTree中看到如下：
 
-   - 上面的任务栏分别有commit（提交）、Pull（更新代码）、Push（推送代码）、Fetch（抓取代码），Branch（新建分支）、Merge（合并代码）、Stash（暂存代码状态）。
-
-
-   - 左侧中的WORKSPACE表示本地的工作区，file status中可以看到本地文件的改变状态，History中是commit历史。下面的BRANCHES显示的是本地的分支。REMOTES显示的是远程的分支。
-
-
-   - 下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。
+  上面的任务栏分别有commit（提交）、Pull（更新代码）、Push（推送代码）、Fetch（抓取代码），Branch（新建分支）、Merge（合并代码）、Stash（暂存代码状态）。
+  
+  左侧中的WORKSPACE表示本地的工作区，file status中可以看到本地文件的改变状态，History中是commit历史。下面的BRANCHES显示的是本地的分支。REMOTES显示的是远程的分支。
+  
+  下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。
 
      ![](Git-Usage/1.png)
 
@@ -103,42 +151,37 @@ git clone https://github.com/leelaylay/leelaylay.github.io.git
 
 5. 本地做了修改后，可以看到文件都还是在Unstaged files中，勾选你要提交的文件，然后文件就会到Staged file中，这个操作对应的命令就是git add, 即把文件从工作区放到暂存区。
 
-6. 此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。完成commit之后，提交历史就会变成如下所示。1 ahead表示本地提交比远程提交领先一次commit。
+6. 此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。
 
+   ![](/Users/lee/Project/Blog/leelaylay.github.io/source/_posts/Git-Usage/2.png)
 
+   完成commit之后，提交历史就会变成如下所示。”1↑“表示本地提交比远程提交领先一次commit。
 
-7. 本地完成commit之后，就需要向远程仓库提交代码了。个人建议，在Push之前，先进行Pull。
+   ![](Git-Usage/3.png)
 
-   
+7. 本地完成commit之后，就需要向远程仓库提交(Push)代码了。个人建议，在Push之前，先进行Pull。
 
-   但是要注意，pull = fetch + merge，你拉取代码的时候选择的是pull还是fetch，还是使用rebase，这个要根据你的个人习惯，最主要的是要根据你团队的Git工作流来操作。个人的建议是用git pull --rebase命令，相当于使用git fetch + git rebase命令，而不是使用merge，这主要是为了保持树结构和历史的干净（推荐去了解一下git merge 和git rebase的区别）。
+   要注意，pull = fetch + merge，你拉取代码的时候选择的是pull还是fetch，还是使用rebase，这个要根据你的个人习惯，最主要的是要根据你团队的Git工作流来操作。
 
-   点击上方的Pull拉取代码。
+8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。
 
-
-
-8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push，弹出如下对话框。
-
-   
+   ![](/Users/lee/Project/Blog/leelaylay.github.io/source/_posts/Git-Usage/5.png)
 
    在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）
 
+   ![](Git-Usage/4.png)
 
+9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的"1 ↑"就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到"1↓"，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
 
-9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的1 ↑就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到1 behind，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
+   （以上部分是主要流程，以下部分是关于 branch 的部分知识）
+
 10. 如果远程仓库有其他的分支，那么我需要checkout（检出）远程分支到本地，如图，远程有dev分支，双击左侧远程的dev分支，即可检出。检出的时候还可以重命名本地该分支的名字。
+
 11. 在SourceTree中经常会出现track这个词，表示“跟踪”，表示本地某个分支跟踪远程某个对应的分支。所以，判断是ahead还是behind commit的时候，都是去和track的那个分支进行比较的。双击本地的某个分支即可完成分支切换。
-12. 当你在本地新建某个分支的时候，也可以推送到远程，然后远程就会有该分支了。如下所示，我在SourceTree中新建了release分支，但是远程没有release分支。我把该分支进行Push。
-13. 然后就发现远程也有release分支了：你要确定是否有某个分支，你也可以去Github或者其他远程服务器查看。
-14. 当然你也可以在SourceTree中删除本地或者远程的一个分支，删除分支是个很谨慎的操作，需要慎重。
 
+12. 当你在本地新建某个分支的时候，也可以推送到远程，然后远程就会有该分支了。你要确定是否有某个分支，你也可以去Github或者其他远程服务器查看。
 
-
-
-
-
-
-
+13. 当然你也可以在SourceTree中删除本地或者远程的一个分支，删除分支是个很谨慎的操作，需要慎重。
 
 
 
