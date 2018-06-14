@@ -89,17 +89,17 @@
 <meta property="og:site_name" content="未来福音">
 <meta property="og:description" content="Git 与 SVN 都是项目版本控制和团队协作的工具，Git 是分布式的版本控制，而SVN是集中式的版本控制，可以说 Git 具有更好的去中心化的能力，也是更符合团队合性质的一个工具，也符合社区和开源的思想。 Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历史和 rollback ），快速的热操作（pull 、push） ， 修正提交（修改提交的记录），本地分支（Local Bra">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/git.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/1.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/2.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/3.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/5.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/4.png">
-<meta property="og:updated_time" content="2018-06-14T03:10:23.300Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/git.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/4.png">
+<meta property="og:updated_time" content="2018-06-14T04:15:43.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Usage">
 <meta name="twitter:description" content="Git 与 SVN 都是项目版本控制和团队协作的工具，Git 是分布式的版本控制，而SVN是集中式的版本控制，可以说 Git 具有更好的去中心化的能力，也是更符合团队合性质的一个工具，也符合社区和开源的思想。 Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历史和 rollback ），快速的热操作（pull 、push） ， 修正提交（修改提交的记录），本地分支（Local Bra">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/13/Git-Usage/git.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/13/Git-Usage/Git-Usage/git.png">
 
 
 
@@ -344,7 +344,7 @@
 <p>与 pull 相对的便是 push，指的是将本地仓库的更新推送到远程仓库的某个分支。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> push 使本地仓库的更新推送到远程仓库的某个分支时。&lt;remote&gt;代表远程仓库，&lt;branch&gt;代表远程分支，可以均不指定代表默认远程的某个分支。</span></span><br><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
 <p>git 相关指令如下：</p>
-<p><img src="git.png" alt="Git-Shell-Usage"></p>
+<p><img src="Git-Usage/git.png" alt="Git-Shell-Usage"></p>
 <h3><span id="图形化界面使用">图形化界面使用</span></h3><p>图形化界面使用方便，实用友好，本文以 SourceTree 为例介绍。</p>
 <ol>
 <li><p>在这里，我们把远程仓库搭建在Github（Bitbucket类似）上面，现在我的远程仓库为： <a href="https://github.com/leelaylay/leelaylay.github.io.git" target="_blank" rel="noopener">https://github.com/leelaylay/leelaylay.github.io.git</a></p>
@@ -355,7 +355,7 @@
 <p>上面的任务栏分别有commit（提交）、Pull（更新代码）、Push（推送代码）、Fetch（抓取代码），Branch（新建分支）、Merge（合并代码）、Stash（暂存代码状态）。</p>
 <p>左侧中的WORKSPACE表示本地的工作区，file status中可以看到本地文件的改变状态，History中是commit历史。下面的BRANCHES显示的是本地的分支。REMOTES显示的是远程的分支。</p>
 <p>下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。</p>
-<p>  <img src="1.png" alt=""></p>
+<p>  <img src="Git-Usage/1.png" alt=""></p>
 </li>
 </ol>
 <ol start="4">
@@ -364,17 +364,17 @@
 <li><p>本地做了修改后，可以看到文件都还是在Unstaged files中，勾选你要提交的文件，然后文件就会到Staged file中，这个操作对应的命令就是git add, 即把文件从工作区放到暂存区。</p>
 </li>
 <li><p>此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。</p>
-<p><img src="2.png" alt=""></p>
+<p><img src="Git-Usage/2.png" alt=""></p>
 <p>完成commit之后，提交历史就会变成如下所示。”1↑“表示本地提交比远程提交领先一次commit。</p>
-<p><img src="3.png" alt=""></p>
+<p><img src="Git-Usage/3.png" alt=""></p>
 </li>
 <li><p>本地完成commit之后，就需要向远程仓库提交(Push)代码了。个人建议，在Push之前，先进行Pull。</p>
 <p>要注意，pull = fetch + merge，你拉取代码的时候选择的是pull还是fetch，还是使用rebase，这个要根据你的个人习惯，最主要的是要根据你团队的Git工作流来操作。</p>
 </li>
 <li><p>完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。</p>
-<p><img src="5.png" alt=""></p>
+<p><img src="Git-Usage/5.png" alt=""></p>
 <p>在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）</p>
-<p><img src="4.png" alt=""></p>
+<p><img src="Git-Usage/4.png" alt=""></p>
 </li>
 <li><p>Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的”1 ↑”就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到”1↓”，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。</p>
 <p>（以上部分是主要流程，以下部分是关于 branch 的部分知识）</p>
