@@ -18,7 +18,7 @@ Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历�
 
 ## 软件安装
 
-一般的图形化界面的工具有[SourceTree](https://www.sourcetreeapp.com/)、[Github Desktop](https://desktop.github.com/)、[Git Tower](https://www.git-tower.com/)等，当然Git也提供纯粹命令行的管理工具[Git](https://git-scm.com/)。个人目前使用体验[SourceTree](https://www.sourcetreeapp.com/)>[Github Desktop](https://desktop.github.com/)，因此本文主要介绍的工具是SourceTree。（最近 M$ 收购了Github，期待 Github 的使用也越来越好）
+一般的图形化界面的工具有 [SourceTree](https://www.sourcetreeapp.com/)、[Github Desktop](https://desktop.github.com/)、[Git Tower](https://www.git-tower.com/)等，当然 Git也提供纯粹命令行的管理工具 [Git](https://git-scm.com/)。个人目前使用体验 [SourceTree](https://www.sourcetreeapp.com/) > [Github Desktop](https://desktop.github.com/)，因此本文主要介绍的工具是SourceTree。（最近 M$ 收购了 Github，期待 Github 的使用也越来越好）
 
 ### 注册账号
 
@@ -36,45 +36,109 @@ Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历�
 
 ### Github Desktop
 
-去https://desktop.github.com/网站下载安装，
+去https://desktop.github.com/网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
 
 ### SourceTree
 
-去https://www.sourcetreeapp.com/网站下载安装。
+去https://www.sourcetreeapp.com/网站下载安装。连接账号的时候如果没有SSH KEY，请选择**HTTPS** 。
 
+## Git 相关概念
 
-
-## 界面操作
-
-**Repository** (仓库): 一个项目的所有代码存放在同一个仓库 (Repo) 中。仓库有本地仓库 (Local) 与远程仓库 (Remote) 的区别。如果你使用 GitHub ，那么你的远程仓库便托管在 GitHub 上。
-
-
+**Repository** (仓库): 一个项目的所有代码存放在同一个仓库 (Repo) 中。仓库有本地仓库 (Local) 与远程仓库 (Remote) 的区别。如果你使用 GitHub （Bitbucket），那么你的远程仓库便托管在 GitHub （Bitbucket）上。
 
 **Commit** (提交): 当你在本地库完成了一些修改后，将所有修改内容提交到缓存区。你可以为每个 Commit 加上一个标题并写明这次修改的主要内容。
 
-
-
 **Push** (推送): 当本地仓库缓冲区有未同步的 Commit 时，即本地仓库代码版本新于远程仓库，Push可以将这些 Commit 推送到远程仓库。
-
-
 
 **Pull/Fetch** (拉取): 当远程仓库代码版本新于本地仓库时，Pull/Fetch 操作可以使本地仓库更新到远程仓库的版本。
 
-
-
 **Sync** (同步): 同步远程仓库版本与本地仓库版本。
-
-
 
 **Fork/Clone/Publish** (复制/克隆/发布): Fork 操作将一个他人的远程仓库复制到自己的远程仓库中； Clone 操作将一个他人的远程仓库复制到自己的本地仓库中；Publish 操作将自己的本地仓库发布到 GitHub 等代码托管平台上，即在托管平台上建立起一个对应的远程仓库。
 
+## 界面操作
+
+### 命令行使用
+
+命令行的使用可以帮助我们更好地理解 Git 相关概念。
+
+**Clone（克隆）**
+
+```shell
+# 使用 https
+git clone https://github.com/leelaylay/leelaylay.github.io.git
+```
 
 
-### 命令行工具使用
 
 
 
-### 图形化界面工具使用
+
+
+![Git-Shell-Usage](Git-Usage/git.png)
+
+### 图形化界面使用
+
+图形化使用方便，实用友好。
+
+1. 在这里，我们把远程仓库搭建在Github（Bitbucket类似）上面，现在我的远程仓库为： https://github.com/leelaylay/leelaylay.github.io.git
+
+2. 打开SourceTree，点击New Repository-->Clone from URL,  然后复制仓库地址 https://github.com/leelaylay/leelaylay.github.io.git   到SourceTree中的Source URL中，本地仓库的位置和名称可以随意修改，点击clone即可把远程仓库中的项目clone到本地了。
+
+3. clone项目完成后，SourceTree中看到如下：
+
+   - 上面的任务栏分别有commit（提交）、Pull（更新代码）、Push（推送代码）、Fetch（抓取代码），Branch（新建分支）、Merge（合并代码）、Stash（暂存代码状态）。
+
+
+   - 左侧中的WORKSPACE表示本地的工作区，file status中可以看到本地文件的改变状态，History中是commit历史。下面的BRANCHES显示的是本地的分支。REMOTES显示的是远程的分支。
+
+
+   - 下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。
+
+     ![](Git-Usage/1.png)
+
+   
+
+4. 可以在SourceTree中可以看到工作区中的改变，比如哪些文件被修改，以及修改的内容。
+
+5. 本地做了修改后，可以看到文件都还是在Unstaged files中，勾选你要提交的文件，然后文件就会到Staged file中，这个操作对应的命令就是git add, 即把文件从工作区放到暂存区。
+
+6. 此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。完成commit之后，提交历史就会变成如下所示。1 ahead表示本地提交比远程提交领先一次commit。
+
+
+
+7. 本地完成commit之后，就需要向远程仓库提交代码了。个人建议，在Push之前，先进行Pull。
+
+   
+
+   但是要注意，pull = fetch + merge，你拉取代码的时候选择的是pull还是fetch，还是使用rebase，这个要根据你的个人习惯，最主要的是要根据你团队的Git工作流来操作。个人的建议是用git pull --rebase命令，相当于使用git fetch + git rebase命令，而不是使用merge，这主要是为了保持树结构和历史的干净（推荐去了解一下git merge 和git rebase的区别）。
+
+   点击上方的Pull拉取代码。
+
+
+
+8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push，弹出如下对话框。
+
+   
+
+   在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）
+
+
+
+9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的1 ↑就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到1 behind，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
+10. 如果远程仓库有其他的分支，那么我需要checkout（检出）远程分支到本地，如图，远程有dev分支，双击左侧远程的dev分支，即可检出。检出的时候还可以重命名本地该分支的名字。
+11. 在SourceTree中经常会出现track这个词，表示“跟踪”，表示本地某个分支跟踪远程某个对应的分支。所以，判断是ahead还是behind commit的时候，都是去和track的那个分支进行比较的。双击本地的某个分支即可完成分支切换。
+12. 当你在本地新建某个分支的时候，也可以推送到远程，然后远程就会有该分支了。如下所示，我在SourceTree中新建了release分支，但是远程没有release分支。我把该分支进行Push。
+13. 然后就发现远程也有release分支了：你要确定是否有某个分支，你也可以去Github或者其他远程服务器查看。
+14. 当然你也可以在SourceTree中删除本地或者远程的一个分支，删除分支是个很谨慎的操作，需要慎重。
+
+
+
+
+
+
+
+
 
 
 
