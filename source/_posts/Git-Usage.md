@@ -131,7 +131,7 @@ git 相关指令如下：
 
 图形化界面使用方便，实用友好，本文以 SourceTree 为例介绍。
 
-1. 在这里，我们把远程仓库搭建在Github（Bitbucket类似）上面，现在我的远程仓库为： https://github.com/leelaylay/leelaylay.github.io.git
+1. 在这里，我们把远程仓库搭建在Github（Bitbucket类似）上面，现在我的远程仓库为： https://github.com/leelaylay/leelaylay.github.io
 
 2. 打开SourceTree，点击New Repository-->Clone from URL,  然后复制仓库地址 https://github.com/leelaylay/leelaylay.github.io.git   到SourceTree中的Source URL中，本地仓库的位置和名称可以随意修改，点击clone即可把远程仓库中的项目clone到本地了。
 
@@ -165,11 +165,11 @@ git 相关指令如下：
 
 8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。
 
-   ![](5.png)
+   ![](4.png)
 
    在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）
 
-   ![](4.png)
+   ![](.png)
 
 9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的"1 ↑"就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到"1↓"，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
 

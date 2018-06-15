@@ -81,9 +81,13 @@ feed:
 type: atom
 path: atom.xml
 limit: 20
+hub:           
+content:          #true/false 是否将整个页面包含进去
 ## Themes: https://hexo.io/themes/
 theme: next
 
+
+  
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -101,4 +105,87 @@ social_icons:
   enable: true
   GitHub: github
   Email: envelope
+
+# Emojis
+githubEmojis:
+  enable: true
+  className: github-emoji
+  unicode: false
+
+# markdown enhancement
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+# hexo sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+
+
+
+# 文章摘要类似
+toc:
+  enable: true
+  # Automatically add list number to toc.
+  # 自动加数字序号
+  number: true
+  maxDepth: 3
+
+  
+
+# hexo-neat 静态资源压缩
+neat_enable: true 
+neat_html:
+  enable: true
+  exclude: 
+neat_css:
+  enable: false
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+
+
+
+# live2d 
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-z16
+  display:
+    position: right
+    width: 112
+    height: 225
+  mobile:
+    show: true
+
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
   
