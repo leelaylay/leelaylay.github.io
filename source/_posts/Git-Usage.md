@@ -66,7 +66,7 @@ Git 相比于 SVN 的优点有合并对提交过程的保留（方便追踪历�
 
 Clone 是指将一个他人的远程仓库复制到自己的本地仓库中。
 
-```shell
+```bash
 # 使用 https，而 ssh 一般需要专门的 ssh key。
 git clone https://github.com/leelaylay/leelaylay.github.io.git
 ```
@@ -75,7 +75,7 @@ git clone https://github.com/leelaylay/leelaylay.github.io.git
 
 Init 独自创建本地的仓库。
 
-```shell
+```bash
 # 将当前文件下下作为本地仓库位置，同时建立".git"文件夹差量保存项目日志。
 git init
 ```
@@ -84,7 +84,7 @@ git init
 
 add 就是将本地 change 添加到项目中。
 
-```shell
+```bash
 # XXXX 代表某个文件或文件夹，另外".gitignore"文件能指定git项目忽略匹配的文件
 git add XXXX
 # rm 代表删除某个文件
@@ -95,7 +95,7 @@ git rm XXXX
 
 commit 就是提交保存一次 change 到提交记录中，区别于 add 的在于 add 的时候没有 commit 到本地仓库提交记录，一般都是先 add 再 commit。
 
-```shell
+```bash
 git commit
 ```
 
@@ -103,7 +103,7 @@ git commit
 
 Pull/Fetch 操作可以使本地仓库更新到远程仓库的版本，可以理解 Fetch 只是将远程的所有提交记录下载到本地，没有合并，而 Pull 则需要合并。
 
-```shell
+```bash
 # fetch 使本地仓库更新到远程仓库的版本时，代码没有合并（merge）。<remote>代表远程仓库。
 git fetch <remote>
 # pull 使本地仓库更新到远程仓库的版本时，代码需要合并（merge）。<remote>代表远程仓库，<branch>代表远程分支，可以均不指定代表默认远程的某个分支。
@@ -114,7 +114,7 @@ git pull <remote> <branch>
 
 与 pull 相对的便是 push，指的是将本地仓库的更新推送到远程仓库的某个分支。
 
-```shell
+```bash
 # push 使本地仓库的更新推送到远程仓库的某个分支时。<remote>代表远程仓库，<branch>代表远程分支，可以均不指定代表默认远程的某个分支。
 git push <remote> <branch>
 ```
@@ -125,7 +125,7 @@ git push <remote> <branch>
 
 git 相关指令如下：
 
-![Git-Shell-Usage](git.png)
+![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223445.png)
 
 ### 图形化界面使用
 
@@ -143,7 +143,7 @@ git 相关指令如下：
   
   下方的状态栏显示本次提交的修改文件。以及修改文件中修改的代码。
 
-     ![](1.png)
+  ![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223431.png)
 
    
 
@@ -153,11 +153,11 @@ git 相关指令如下：
 
 6. 此时就可以进行commit操作了。点击左上角的commit。在commit的时候强烈建议写上注释，作为commit的可读日志。
 
-   ![](2.png)
+   ![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223433.png)
 
    完成commit之后，提交历史就会变成如下所示。”1↑“表示本地提交比远程提交领先一次commit。
 
-   ![](3.png)
+   ![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223435.png)
 
 7. 本地完成commit之后，就需要向远程仓库提交(Push)代码了。个人建议，在Push之前，先进行Pull。
 
@@ -165,11 +165,11 @@ git 相关指令如下：
 
 8. 完成更新代码后 ，就可以向远程提交代码了。点击上方的Push。
 
-   ![](4.png)
+   ![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223438.png)
 
    在提交的时候，选择要提交的分支即可。此时可能需要你输入Github或者其他的远程的用户名和密码，输入即可。（注意：此时输入的用户名和密码与.git配置里面的name和email不是同一个概念。此时要你输入的用户名和密码只和你的远程服务器有关，和git无关，因为你要向服务器推送代码，必然要有权限，这个用户名和密码相当于权限。但是.git里面的name和email只是作为你git这个工具标记而已，和远程服务器没有关系。）
 
-   ![](.png)
+   ![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20180829223440.png)
 
 9. Push完代码后，可以在提交历史中看到自己和别人的提交。此时，本地和远程已经保持了同步，所以原来的"1 ↑"就消失了。来到Github中，发现代码已经成功提交了。此时，如果其他开发者向远程仓库提交了代码，在你本地的master分支下，可以看到"1↓"，表示你本地的分支已经落后于远程分支1 commit了。可以选择Pull来更新代码。
 

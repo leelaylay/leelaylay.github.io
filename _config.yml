@@ -133,11 +133,12 @@ baidusitemap:
 
 # 文章摘要类似
 toc:
-  enable: true
-  # Automatically add list number to toc.
-  # 自动加数字序号
-  number: true
+  # enable: true
+  # # Automatically add list number to toc.
+  # # 自动加数字序号
+  # number: true
   maxDepth: 3
+  # slugify: false
 
   
 
