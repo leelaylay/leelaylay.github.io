@@ -5,52 +5,15 @@
     
   <url>
     <loc>http://yoursite.com/2019/04/09/Word-Similarity-Calculation/</loc>
-    <lastmod>2019-04-08T16:57:39.316Z</lastmod>
+    <lastmod>2019-04-08T17:03:25.337Z</lastmod>
     <data>
         <display>
         <title>Word Similarity Calculation</title>
         <pubTime>2019-04-08T16:16:20.000Z</pubTime>
         
-        <tag>Word Similarity</tag>
-         
         <tag>Word Distance</tag>
          
         <tag>NLP</tag>
-         
-        <tag>WordNet</tag>
-         
-        <tag>Google</tag>
-         
-        <tag>Wikipedia</tag>
-         
-        <tag>Word2Vec</tag>
-         
-        <tag>Fasttext</tag>
-         
-        <tag>GloVe</tag>
-         
-        <tag>ELMo</tag>
-         
-        <tag>BERT</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/06/13/Git-Usage/</loc>
-    <lastmod>2019-04-08T16:23:42.912Z</lastmod>
-    <data>
-        <display>
-        <title>Git Usage</title>
-        <pubTime>2018-06-13T01:49:17.000Z</pubTime>
-        
-        <tag>Tool</tag>
-         
-        <tag>Git</tag>
          
          
            
@@ -61,13 +24,32 @@
     
   <url>
     <loc>http://yoursite.com/2018/05/16/hello-world/</loc>
-    <lastmod>2019-04-08T16:23:36.140Z</lastmod>
+    <lastmod>2019-04-08T17:00:05.000Z</lastmod>
     <data>
         <display>
         <title>Hexo Usage</title>
         <pubTime>2018-05-16T03:30:32.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Tool</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/13/Git-Usage/</loc>
+    <lastmod>2019-04-08T16:59:50.055Z</lastmod>
+    <data>
+        <display>
+        <title>Git Usage</title>
+        <pubTime>2018-06-13T01:49:17.000Z</pubTime>
+        
+        <tag>Tool</tag>
+         
+        <tag>Git</tag>
          
          
            
