@@ -1,7 +1,7 @@
 ---
 title: Word Similarity Calculation
 date: 2019-04-09 00:16:20
-tags: [ Word Similarity, Word Distance, NLP, WordNet, Google, Wikipedia, Word2Vec, Fasttext, GloVe, ELMo, BERT ]
+tags: [ Word Distance, NLP]
 ---
 
 ## Word Similarity
