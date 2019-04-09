@@ -1,7 +1,10 @@
 ---
 title: Git Usage
+tags:
+  - Tool
+  - Git
+abbrlink: 39759
 date: 2018-06-13 09:49:17
-tags: [ Tool, Git ]
 ---
 
 Git 与 SVN 都是项目版本控制和团队协作的工具，Git 是分布式的版本控制，而SVN是集中式的版本控制，可以说 Git 具有更好的去中心化的能力，也是更符合团队合性质的一个工具，也符合社区和开源的思想。

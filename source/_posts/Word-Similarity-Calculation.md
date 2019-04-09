@@ -1,8 +1,12 @@
 ---
 title: Word Similarity Calculation
+tags:
+  - Word Distance
+  - NLP
+abbrlink: 36717
 date: 2019-04-09 00:16:20
-tags: [ Word Distance, NLP]
 ---
+
 
 ## Word Similarity
 
@@ -41,3 +45,5 @@ All results are calculated in Spearman's rank correlation coefficient.
 | GloVe           | 0.7152     | 0.8016     | 0.4512      | 0.4083     | 0.2832       |
 | ELMo            | 0.6938     | 0.4698     | 0.2570      | 0.3151     | 0.2407       |
 | BERT(Embedding) | 0.0019     | 0.0668     | 0.2021      | 0.0801     | 0.0487       |
+
+![](https://raw.githubusercontent.com/leelaylay/IMGUR/master/img/20190409124908.png)
